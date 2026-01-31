@@ -1,0 +1,5 @@
+AI tool: GPT pro
+Purpose: Implementing a basic game. I focusd more attentions on obstacle' UI and
+         game logic when chicken on the log
+
+AI Prompt (The true orignal AI prompt is Chinese, which will be shown at the bottom)
