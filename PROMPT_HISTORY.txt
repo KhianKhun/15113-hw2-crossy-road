@@ -7,11 +7,135 @@ AI Prompt (The true orignal AI prompt is Chinese, which will be shown at the bot
 ********************************************************************************
 translated prompt (English)
 ********************************************************************************
+I am currently working on a Python programming project. The task is to implement
+a game similar to Crossy Road. The detailed requirements are: 
+Crossy Road is an arcade-style game where a character must cross and other hazards. 
+The goal is to get as far as possible without being hit. We aren't going to list 
+out all the features here, because we don't want you to just paste those as the 
+entirety of your prompt. Instead, watch this short video to get a sense for the 
+game if you haven't played it before.
+And a very personal note from Mike: Back in MY day we called this FROGGER. For 
+some of you old folks in the room who might not be familiar with Crossy Road, 
+you might remember this, which is the same in its core respects:
+Your Challenge: Build something that mimics Crossy Road Python as closely as 
+possible within 1 hour. You may wish to aim somewhere between Frogger and Crossy 
+Road, since attempting something fully 3D may make the task substantially more 
+difficult. A 2D implementation is just fine here. You can divide this project into
+different sub files based on the functions you want to implement. In total, if you
+want, you can divide the whole task into different .py file, (some if which may 
+correspond to terrance, some of which may correspond to control logic, and some
+of which may correspond to UI/UX). Alright, give me codes now.
 
 
+Your code is working. Now I want to add some functions such that 1. a pause 
+button, controled by "p" on the keyboard, 2. I need a more detailed and beatiful 
+game interface (UI), the current game interfance is just consist of pure color 
+block, and by the way, I need our controllable character is a little Chicken.
 
 
+Traceback (most recent call last): File "C:\Users\22278\Desktop\CMU\25-26 spring
+ semster\15113\crossy_road_clone\main.py", line 105, in <module> main() ~~~~^^ 
+ File "C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\main.py", 
+ line 88, in main world.draw(screen, camera_y_px) ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^ 
+ File "C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\world.py", 
+ line 256, in draw self.get_lane(gy).draw(screen, camera_y_px) 
+ ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\22278\Desktop\CMU\25-26 
+ spring semster\15113\crossy_road_clone\world.py", line 141, in draw 
+ m.draw(screen, camera_y_px) ~~~~~~^^^^^^^^^^^^^^^^^^^^^ File 
+ "C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\entities.py", 
+ line 82, in draw super().draw(screen, camera_y_px, COLOR_CAR) ~~~~~~~~~~~~
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ TypeError: MovingEntity.draw() takes 3 positional 
+ arguments but 4 were given    Here is a bug, help me debuging
 
+
+But after the Game over, there is not any reaction on game when press R on the 
+keyboard. Help me debuging
+
+
+The current code is working, and then I want to enhance the appearance of log, cars
+and trains.
+1. The current car is just pure red blocks and has different length. I wnat to 
+change it as: in the first, the car should be a actual car, the appearance should 
+lool like a true care and has the different length, where the small block represents
+the "car", and big block represents the "bus". All the cars should have a random
+color on the road.
+2. The log should look like a true log, but not a pure brown block.
+3. You are using a pure white block representing the train, also, I want to you 
+use a true train replace it.
+Give me codes based on my requirments
+
+
+I have a bug! The error messages are:  PS C:\Users\22278\Desktop\CMU\25-26 spring 
+semster\15113\ crossy_road_clone> py main.py pygame 2.6.1 (SDL 2.28.4, Python 3.13.7) 
+Hello from the pygame community. https://www.pygame.org/contribute.html Traceback 
+(most recent call last): File "C:\Users\22278\Desktop\CMU\25-26 spring 
+semster\15113\crossy_road_clone\main.py", line 10, in <module> from entities 
+import Player ImportError: cannot import name 'Player' from 'entities' 
+(C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\entities.py) 
+Debugging!
+
+
+And now I required some change on game difficult. Car, log, train, everything runs
+so fast, I need you to design a function about their movement speed, such that
+their initial speed is slow and generally becomes faster and faster through scores,
+until the speed reach the maximum value. You may try to create a new python file, 
+which records the relative speed so that I can balance game difficult easily. 
+Give me the code based on my requirements.
+
+
+Here are bugs, the error messages are the following. Help me debugging
+ PS C:\Users\22278\Desktop\CMU\25-26 spring semster
+\15113\crossy_road_clone> py main.py pygame 2.6.1 (SDL 2.28.4, Python 3.13.7) 
+Hello from the pygame community. https://www.pygame.org/contribute.html Traceback 
+(most recent call last): File "C:\Users\22278\Desktop\CMU\25-26 spring semster
+\15113\crossy_road_clone\main.py", line 107, in <module> main() ~~~~^^ File "C:
+\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\main.py",
+ line 82, in main world.update(dt, camera_y_px, player.score) ~~~~~~~~~~~~
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\22278\Desktop\CMU\25-26 spring 
+ semster\15113\crossy_road_clone\world.py", line 263, in update lane.update\
+ (dt, score) ^^^^^^^^^^^ AttributeError: 'Lane' object has no attribute 'update'
+  PS C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone>
+
+
+One more bug. cars on the road, train on the tail, and log on the river are too
+crowded. Debug it, this problem appears the time after the chang of "cotrolling
+everything moving speed"
+
+One more, the movement speed of log is too much slow, fix it. Then I need to fix
+a game logic when the chick moves to the edge of window as it stands on the log:
+If a log moves towards to the left, when the chicken moves to the edge, the next
+stage is not Game Over, insteading of the chicken standing to the right one block 
+of the log it currently standing. However, if the right one block is the water, 
+game over, if two logs are connected (which have a small gap), the chick should 
+stand at the following log. If player control (horizontially) the chicken moves
+to the river, also game over. Give me the code ased on my requirments.
+
+
+No, you are wrong! The current game logic is that Chicken movement follows the
+log movement, but chicken has a faster speed, causing chicken falls into the water.
+Change this game logic.
+
+
+There is the same problem about game logic that chicken does not touch the edge
+of window, chicken does not move thorught the log movement, and in general case, 
+chicken falls into the water since its faster speed of the log 
+
+
+I want to fix the code, since the game logic of chicken standing on the log has
+something wrong. I need that: 1. in general case, the chicken moves through the
+movement of log, which is, the log moves one unit block, the chicken also moves 
+one unit block; 2. in special caes, if the chick moves off-screen with the log 
+in the next step, the chick should stop moving as if blocked by the screen. It 
+remains stationary until the log runs away and the chick is standing on the water, 
+at which point the player fails. 2.5 There are two special cases. If the current 
+log floats off-screen, but another plank immediately follows, the chick will
+stand on the next log and continue to be blocked by the screen. Alternatively, 
+if the player maneuvers the chick into the water, this also counts as a failure. 
+Please modify the code according to these requirements.
+
+
+Good, there remain a problem that the generateing frequency of log is too high, 
+tell me the location of generation arguments, all logs are connected on the river. 
 
 
 
@@ -29,7 +153,7 @@ true prompt (Chinese)
 叫做“青蛙过河”。在座的各位老朋友可能对《天天过马路》（Crossy Road）不太熟悉，你们或许还
 记得这个游戏，它的核心玩法和《青蛙过河》很相似：你的挑战：在 1 小时内，用 Python 尽可能
 地模拟 Crossy Road。你可以选择介于 Frogger 和 Crossy Road 之间的版本，因为完全 3D 的
-实现方式可能会大大增加难度。2D 版本完全可以接受你可以根据想要实现的功能，把这个项目分成
+实现方式可能会大大增加难度。2D 版本完全可以接受。你可以根据想要实现的功能，把这个项目分成
 不同的文件，总之，如果你想，你可以按照你的想法把这个项目拆分成不同的py文件，来实现不同的
 功能（比如我之前写project的时候拆成了画面，操控逻辑，地形这种）好了，给我对应的代码
 
