@@ -3,3 +3,121 @@ Purpose: Implementing a basic game. I focusd more attentions on obstacle' UI and
          game logic when chicken on the log
 
 AI Prompt (The true orignal AI prompt is Chinese, which will be shown at the bottom)
+
+********************************************************************************
+translated prompt (English)
+********************************************************************************
+
+
+
+
+
+
+
+
+
+
+********************************************************************************
+true prompt (Chinese)
+********************************************************************************
+
+我现在正在完成一项关于python的项目编程，这个编程的任务是实现一款类似crossy road的游戏，
+游戏的具体要求大致如下：Crossy Road 是什么？《天天过马路》（Crossy Road）是一款街机风格
+的游戏，玩家控制的角色需要穿越各种障碍物。目标是在不被撞到的情况下尽可能走得更远。我们不
+会在这里列出所有游戏特色，因为我们不希望你直接把这些内容粘贴到提示框里。如果你之前没玩过
+这款游戏，可以观看这段简短的视频来了解一下。还有迈克的一段个人感想：想当年，我们把这游戏
+叫做“青蛙过河”。在座的各位老朋友可能对《天天过马路》（Crossy Road）不太熟悉，你们或许还
+记得这个游戏，它的核心玩法和《青蛙过河》很相似：你的挑战：在 1 小时内，用 Python 尽可能
+地模拟 Crossy Road。你可以选择介于 Frogger 和 Crossy Road 之间的版本，因为完全 3D 的
+实现方式可能会大大增加难度。2D 版本完全可以接受你可以根据想要实现的功能，把这个项目分成
+不同的文件，总之，如果你想，你可以按照你的想法把这个项目拆分成不同的py文件，来实现不同的
+功能（比如我之前写project的时候拆成了画面，操控逻辑，地形这种）好了，给我对应的代码
+
+
+代码可以跑。我现在想要加入： 1. 一个暂停的功能，用键盘上的p暂停/继续游戏 2. 我需要一个
+更加精美的游戏界面，你现在的游戏环面只是单纯的色块，操控角色要设计成一个小鸡
+
+
+Traceback (most recent call last): File "C:\Users\22278\Desktop\CMU\25-26 spring
+ semster\15113\crossy_road_clone\main.py", line 105, in <module> main() ~~~~^^ 
+ File "C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\main.py", 
+ line 88, in main world.draw(screen, camera_y_px) ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^ 
+ File "C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\world.py", 
+ line 256, in draw self.get_lane(gy).draw(screen, camera_y_px) 
+ ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\22278\Desktop\CMU\25-26 
+ spring semster\15113\crossy_road_clone\world.py", line 141, in draw 
+ m.draw(screen, camera_y_px) ~~~~~~^^^^^^^^^^^^^^^^^^^^^ File 
+ "C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\entities.py", 
+ line 82, in draw super().draw(screen, camera_y_px, COLOR_CAR) ~~~~~~~~~~~~
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ TypeError: MovingEntity.draw() takes 3 positional 
+ arguments but 4 were given 出bug报错了，帮我修一下
+
+
+ 但是我现在game over之后，再摁R的时候并不能重新开始游戏，帮我改下bug
+
+
+现在代码可以跑并且解决了上述得问题
+然后我想要优化车子，火车，漂浮木板的形象
+1. 你现在的车子是单纯的红色色块，并且有着不同的长度。我想改成：首先他要有一个真实的车的
+形状，然后车子的颜色（外表）要随机，一个块大小的车可以用小轿车表示，两个色块长的可以用巴士表示
+2. 木板我希望能更像是木板，而不是单纯的一个棕色色块
+3. 火车你现在用的是白色色块表示，还是，我希望你用个火车代替
+根据我的要求给我代码
+
+
+现在我的代码跑不了了 PS C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\
+crossy_road_clone> py main.py pygame 2.6.1 (SDL 2.28.4, Python 3.13.7) 
+Hello from the pygame community. https://www.pygame.org/contribute.html Traceback 
+(most recent call last): File "C:\Users\22278\Desktop\CMU\25-26 spring 
+semster\15113\crossy_road_clone\main.py", line 10, in <module> from entities 
+import Player ImportError: cannot import name 'Player' from 'entities' 
+(C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\entities.py) 
+报错是上面这些，帮我修下代码
+
+
+然后现在我要对游戏难度进行下修改 车子，木板，火车，一切的一切都太快了。我需要你修改他们
+的移动速度，初始移动速度非常满，然后他们三个需要随着分数的累计一点点变快，直到达到一个阈值。 
+我任务，为了方便调试，你可以尝试再开一个py文件，然里面记录相关的移动速度。 根据我的要求，
+给我代码
+
+
+出bug了，报错如下，帮我修一下 PS C:\Users\22278\Desktop\CMU\25-26 spring semster
+\15113\crossy_road_clone> py main.py pygame 2.6.1 (SDL 2.28.4, Python 3.13.7) 
+Hello from the pygame community. https://www.pygame.org/contribute.html Traceback 
+(most recent call last): File "C:\Users\22278\Desktop\CMU\25-26 spring semster
+\15113\crossy_road_clone\main.py", line 107, in <module> main() ~~~~^^ File "C:
+\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone\main.py",
+ line 82, in main world.update(dt, camera_y_px, player.score) ~~~~~~~~~~~~
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\22278\Desktop\CMU\25-26 spring 
+ semster\15113\crossy_road_clone\world.py", line 263, in update lane.update\
+ (dt, score) ^^^^^^^^^^^ AttributeError: 'Lane' object has no attribute 'update'
+  PS C:\Users\22278\Desktop\CMU\25-26 spring semster\15113\crossy_road_clone>
+
+
+现在又有问题了，马路，水流和铁路上的车（木板）太密集了。你修改一下，这个问题是在提出“控
+制车子运动速度“这个更改之后出现的
+
+
+还有一点，木板的移动速度有点太慢太慢了。 然后我要修复一下小鸡在木板上运行到边缘的逻辑：
+如果一个木板往左运动，小鸡在上面，那么小鸡到边缘的时候，下一步不要判定失败，相代替的是，
+小鸡被屏幕边缘挤到了右边的一格木板。下一步是，如果被挤后小鸡的脚下是水，那就失败，如果是
+两个木板连着，那就让小鸡到另一个木板上。如果玩家（水平）操纵小鸡跳入河里，也算失败 好了，
+给我代码
+
+
+不对，现在显示状况是： 小鸡随着木板动，但是比木板运动得块，导致了小鸡在木板前面落水了，
+改一下实现逻辑
+
+
+还是有相同的问题，小鸡没有碰到边缘，就是正常情况，木板走着走着，小鸡就到河里了
+
+
+帮我修一下代码，现在小鸡在木板上的逻辑有问题。我需要： 1. 正常情况下，小鸡是随着木板移动
+而移动的，也就是，木板移动一单位，小鸡移动一单位 2. 不正常的情况就是，如果小鸡下一步随着
+木板的移动跑到屏幕外了，那小鸡就要像被屏幕阻挡一样，停止不动。直到木板飘走，小鸡站在了水
+上，玩家失败。 2.5 对于不正常的情况，还有两个特殊例子。如果当前木板飘出了屏幕，但是紧跟
+着又是另一个木板的情况下，小鸡会站到另一个木板上，继续被屏幕阻挡。或者玩家操纵小鸡调入水
+中，也算失败 根据这个要求修一下代码
+
+
+很好，现在还有个问题，就是木板生成得太频繁了，告诉我哪里改这个生成的参数，河上全是连着的木板
